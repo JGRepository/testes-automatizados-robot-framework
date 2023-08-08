@@ -9,3 +9,10 @@ Test Teardown       Fechar Browser
 *** Test Cases ***
 TC001 - Validando mensagem login erro ao não digitar usuário
     E não insira login nem Senha
+
+TC002 - Validando mensagem de login erro ao não digitar senha
+    E insira login e não insira senha
+
+TC003 - Validando mensagem ao digitar login e senha inválidos
+    E insira login e senha inválidos
+    

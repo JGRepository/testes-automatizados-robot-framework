@@ -1,14 +1,18 @@
 *** Variables ***
-${username}    standard_user
-${password}    secret_sauce
-
+${loginScreenShoot}    results\Login\loginScreenShoots
 &{LOGIN}
 ...    inpUsername=//*[@name="user-name"]
 ...    inpPassword=//*[@name="password"]
 ...    btnLoging=//*[@id="login-button"]
 ...    errorText=//*[@id="login_button_container"]/div/form/h3
+...    usernameValid=standard_user
+...    usernameProblem=problem_user
+...    password=secret_sauce
+...    error=error
 
 
 
 &{LOGIN_VALIDATIONS}
-...    error1=Epic sadface: Username is required
+...    errorUsername=Epic sadface: Username is required
+...    errorPassword=Epic sadface: Password is required
+...    loginError=Epic sadface: Username and password do not match any user in this service
