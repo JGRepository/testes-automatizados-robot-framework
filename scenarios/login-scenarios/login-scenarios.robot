@@ -1,6 +1,7 @@
 *** Settings ***
 Resource    ../../settings/settings.robot
 Resource    ../../resources/login-resources/login-resources.resource
+Resource    ../../resources/products-resource/products.resource
 Library     SeleniumLibrary
 Library    Screenshot
 
@@ -34,3 +35,26 @@ E insira login e senha inválidos
     ${textValidation}    Get Text    ${LOGIN.errorText}
     ${textValidation}    Should Contain    ${textValidation}   ${LOGIN_VALIDATIONS.loginError}
     Capture Page Screenshot    ${loginScreenShoot}\TC003.jpg
+
+E insira login e senha válidos - block
+    Wait Until Element Is Visible    ${LOGIN.inpUsername}
+    Input Text    ${LOGIN.inpUsername}    ${LOGIN.userLock}
+    Input Text    ${LOGIN.inpPassword}    ${LOGIN.password}
+    Click Button    ${LOGIN.btnLoging}
+E meu login esteja bloqueado
+    ${textValidation}    Get Text    ${LOGIN.errorText}
+    ${textValidation}    Should Contain    ${textValidation}   ${LOGIN_VALIDATIONS.loginLock}
+    Capture Page Screenshot    ${loginScreenShoot}\TC004.jpg
+
+E insira login e senha válidos - success
+    Wait Until Element Is Visible    ${LOGIN.inpUsername}
+    Input Text    ${LOGIN.inpUsername}    ${LOGIN.usernameValid}
+    Input Text    ${LOGIN.inpPassword}    ${LOGIN.password}
+    Click Button    ${LOGIN.btnLoging}
+
+Então devo entrar na tela de produtos
+    Wait Until Element Is Visible    ${PRODUCTS.labelHeader}
+    ${productsPage}    Get Text    ${PRODUCTS.labelHeader}
+    Log To Console    ${productsPage}
+    Should Be Equal    ${productsPage}       Products
+    Capture Page Screenshot    ${loginScreenShoot}\TC005.jpg
