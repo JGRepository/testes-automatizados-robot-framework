@@ -8,5 +8,12 @@ Tenha também a versão atualizada do webdriver
 * Baixe a versão do chromeDriver igual a numerção de XXX
 * Cole o arquivo chromeDriver.exe na pasta de scrips do python (seuUsuário/AppData\Local\Programs\Python\Python311\Scripts\)
 
-# Para executar os testes rode o comando
-robot -d test-cases/results test-cases/testing.robot
+# Para executar TODAS as SWITCHES de testes rode o comando
+robot -d results/all-tests-results-log test-cases
+
+
+# Para executar os testes da página de LOGIN rode o comando
+robot -d results/login test-cases/login-tests.robot
+
+# Para executar os testes da página de HOME-PAGE rode o comando
+robot -d results/home-page test-cases/home-page.robot

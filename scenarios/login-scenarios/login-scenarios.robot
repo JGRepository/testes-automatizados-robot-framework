@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../../settings/settings.robot
 Resource    ../../resources/login-resources/login-resources.resource
-Resource    ../../resources/products-resource/products.resource
+Resource    ../../resources/home-page-resource/home-page.resource
 Library     SeleniumLibrary
 Library    Screenshot
 
