@@ -1,0 +1,49 @@
+name: Pipeline Test
+
+on: push
+
+jobs:
+  test:
+    name: Testes de API
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonagem Projeto
+        uses: actions/checkout@v3
+
+      - name: Configuração do Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12'
+
+      - name: Instalar Dependencias do Projeto
+        run: |
+          pip install robotframework
+          pip install robotframework-requests
+          pip install robotframework-seleniumlibrary
+      
+      - name: Execução dos Testes de API
+        run: |
+          robot --outputdir results/ test-cases/
+
+      - name: Salvando Resultado dos Testes
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: resultado-testes
+          path: /results
+
+      - name: Configurar Site de Relatorios dos Testes
+        uses: actions/configure-pages@v5
+        if: always()
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        if: always()
+        with:
+          path: results/
+
+      - name: Sunir Site de Relatorios dos Testes
+        id: deployment
+        uses: actions/deploy-pages@v4
+        if: always()

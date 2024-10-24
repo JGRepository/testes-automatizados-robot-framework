@@ -1,347 +1,352 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230909 11:35:44.612" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20241023 23:03:36.086" rpa="false" schemaversion="4">
 <suite id="s1" name="Login-Tests" source="C:\Users\Lenovo\Documents\Projetos TI\Robot Framework\WebAutomationTesting\test-cases\login-tests.robot">
 <test id="s1-t1" name="TC001 - Validando mensagem login erro ao não digitar usuário" line="10">
 <kw name="Dado que eu acesse o site" library="login-scenarios" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL.sauceDemo}</arg>
 <arg>${browser}</arg>
+<arg>options=add_argument("--headless")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230909 11:35:44.762" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/'.</msg>
-<status status="PASS" starttime="20230909 11:35:44.761" endtime="20230909 11:35:46.097"/>
+<msg timestamp="20241023 23:03:36.446" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/'.</msg>
+<status status="PASS" starttime="20241023 23:03:36.444" endtime="20241023 23:03:40.065"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:44.761" endtime="20230909 11:35:46.097"/>
+<status status="PASS" starttime="20241023 23:03:36.444" endtime="20241023 23:03:40.065"/>
 </kw>
 <kw name="E não insira login nem Senha" library="login-scenarios">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${LOGIN.btnLoging}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230909 11:35:46.098" endtime="20230909 11:35:46.127"/>
+<status status="PASS" starttime="20241023 23:03:40.065" endtime="20241023 23:03:40.134"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${LOGIN.btnLoging}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230909 11:35:46.128" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
-<status status="PASS" starttime="20230909 11:35:46.127" endtime="20230909 11:35:46.181"/>
+<msg timestamp="20241023 23:03:40.136" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20241023 23:03:40.134" endtime="20241023 23:03:40.188"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${textValidation}</var>
 <arg>${LOGIN.errorText}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230909 11:35:46.206" level="INFO">${textValidation} = Epic sadface: Username is required</msg>
-<status status="PASS" starttime="20230909 11:35:46.181" endtime="20230909 11:35:46.206"/>
+<msg timestamp="20241023 23:03:40.209" level="INFO">${textValidation} = Epic sadface: Username is required</msg>
+<status status="PASS" starttime="20241023 23:03:40.188" endtime="20241023 23:03:40.209"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <var>${textValidation}</var>
 <arg>${textValidation}</arg>
 <arg>${LOGIN_VALIDATIONS.errorUsername}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<msg timestamp="20230909 11:35:46.207" level="INFO">${textValidation} = None</msg>
-<status status="PASS" starttime="20230909 11:35:46.206" endtime="20230909 11:35:46.207"/>
+<msg timestamp="20241023 23:03:40.212" level="INFO">${textValidation} = None</msg>
+<status status="PASS" starttime="20241023 23:03:40.212" endtime="20241023 23:03:40.212"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <arg>${loginScreenShoot}\TC001.jpg</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20230909 11:35:46.277" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="resultsLoginloginScreenShootsTC001.jpg"&gt;&lt;img src="resultsLoginloginScreenShootsTC001.jpg" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230909 11:35:46.277" level="INFO">C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\remote\webdriver.py:889: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+<msg timestamp="20241023 23:03:40.302" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="resultsLoginloginScreenShootsTC001.jpg"&gt;&lt;img src="resultsLoginloginScreenShootsTC001.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20241023 23:03:40.302" level="INFO">C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\remote\webdriver.py:889: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
   warnings.warn(</msg>
-<status status="PASS" starttime="20230909 11:35:46.207" endtime="20230909 11:35:46.278"/>
+<status status="PASS" starttime="20241023 23:03:40.212" endtime="20241023 23:03:40.303"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:46.098" endtime="20230909 11:35:46.278"/>
+<status status="PASS" starttime="20241023 23:03:40.065" endtime="20241023 23:03:40.303"/>
 </kw>
 <kw name="Fechar Browser" library="login-scenarios" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230909 11:35:46.279" endtime="20230909 11:35:48.524"/>
+<status status="PASS" starttime="20241023 23:03:40.304" endtime="20241023 23:03:42.486"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:46.278" endtime="20230909 11:35:48.524"/>
+<status status="PASS" starttime="20241023 23:03:40.303" endtime="20241023 23:03:42.486"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:44.760" endtime="20230909 11:35:48.524"/>
+<status status="PASS" starttime="20241023 23:03:36.443" endtime="20241023 23:03:42.486"/>
 </test>
 <test id="s1-t2" name="TC002 - Validando mensagem de login erro ao não digitar senha" line="13">
 <kw name="Dado que eu acesse o site" library="login-scenarios" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL.sauceDemo}</arg>
 <arg>${browser}</arg>
+<arg>options=add_argument("--headless")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230909 11:35:48.529" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/'.</msg>
-<status status="PASS" starttime="20230909 11:35:48.528" endtime="20230909 11:35:49.846"/>
+<msg timestamp="20241023 23:03:42.489" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/'.</msg>
+<status status="PASS" starttime="20241023 23:03:42.488" endtime="20241023 23:03:44.076"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:48.527" endtime="20230909 11:35:49.846"/>
+<status status="PASS" starttime="20241023 23:03:42.488" endtime="20241023 23:03:44.077"/>
 </kw>
 <kw name="E insira login e não insira senha" library="login-scenarios">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${LOGIN.inpUsername}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230909 11:35:49.848" endtime="20230909 11:35:49.878"/>
+<status status="PASS" starttime="20241023 23:03:44.079" endtime="20241023 23:03:44.109"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${LOGIN.inpUsername}</arg>
 <arg>${LOGIN.usernameValid}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230909 11:35:49.879" level="INFO">Typing text 'standard_user' into text field '//*[@name="user-name"]'.</msg>
-<status status="PASS" starttime="20230909 11:35:49.878" endtime="20230909 11:35:49.978"/>
+<msg timestamp="20241023 23:03:44.110" level="INFO">Typing text 'standard_user' into text field '//*[@name="user-name"]'.</msg>
+<status status="PASS" starttime="20241023 23:03:44.109" endtime="20241023 23:03:44.217"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${LOGIN.btnLoging}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230909 11:35:49.979" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
-<status status="PASS" starttime="20230909 11:35:49.978" endtime="20230909 11:35:50.028"/>
+<msg timestamp="20241023 23:03:44.217" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20241023 23:03:44.217" endtime="20241023 23:03:44.271"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${textValidation}</var>
 <arg>${LOGIN.errorText}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230909 11:35:50.053" level="INFO">${textValidation} = Epic sadface: Password is required</msg>
-<status status="PASS" starttime="20230909 11:35:50.029" endtime="20230909 11:35:50.053"/>
+<msg timestamp="20241023 23:03:44.292" level="INFO">${textValidation} = Epic sadface: Password is required</msg>
+<status status="PASS" starttime="20241023 23:03:44.271" endtime="20241023 23:03:44.293"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <var>${textValidation}</var>
 <arg>${textValidation}</arg>
 <arg>${LOGIN_VALIDATIONS.errorPassword}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<msg timestamp="20230909 11:35:50.054" level="INFO">${textValidation} = None</msg>
-<status status="PASS" starttime="20230909 11:35:50.053" endtime="20230909 11:35:50.054"/>
+<msg timestamp="20241023 23:03:44.293" level="INFO">${textValidation} = None</msg>
+<status status="PASS" starttime="20241023 23:03:44.293" endtime="20241023 23:03:44.293"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <arg>${loginScreenShoot}TC002.jpg</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20230909 11:35:50.139" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="resultsLoginloginScreenShootsTC002.jpg"&gt;&lt;img src="resultsLoginloginScreenShootsTC002.jpg" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20230909 11:35:50.054" endtime="20230909 11:35:50.139"/>
+<msg timestamp="20241023 23:03:44.364" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="resultsLoginloginScreenShootsTC002.jpg"&gt;&lt;img src="resultsLoginloginScreenShootsTC002.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241023 23:03:44.293" endtime="20241023 23:03:44.364"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:49.847" endtime="20230909 11:35:50.140"/>
+<status status="PASS" starttime="20241023 23:03:44.079" endtime="20241023 23:03:44.364"/>
 </kw>
 <kw name="Fechar Browser" library="login-scenarios" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230909 11:35:50.140" endtime="20230909 11:35:52.284"/>
+<status status="PASS" starttime="20241023 23:03:44.364" endtime="20241023 23:03:46.517"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:50.140" endtime="20230909 11:35:52.284"/>
+<status status="PASS" starttime="20241023 23:03:44.364" endtime="20241023 23:03:46.517"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:48.525" endtime="20230909 11:35:52.284"/>
+<status status="PASS" starttime="20241023 23:03:42.488" endtime="20241023 23:03:46.517"/>
 </test>
 <test id="s1-t3" name="TC003 - Validando mensagem ao digitar login e senha inválidos" line="16">
 <kw name="Dado que eu acesse o site" library="login-scenarios" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL.sauceDemo}</arg>
 <arg>${browser}</arg>
+<arg>options=add_argument("--headless")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230909 11:35:52.291" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/'.</msg>
-<status status="PASS" starttime="20230909 11:35:52.289" endtime="20230909 11:35:53.672"/>
+<msg timestamp="20241023 23:03:46.520" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/'.</msg>
+<status status="PASS" starttime="20241023 23:03:46.520" endtime="20241023 23:03:48.070"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:52.289" endtime="20230909 11:35:53.672"/>
+<status status="PASS" starttime="20241023 23:03:46.517" endtime="20241023 23:03:48.070"/>
 </kw>
 <kw name="E insira login e senha inválidos" library="login-scenarios">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${LOGIN.inpUsername}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230909 11:35:53.672" endtime="20230909 11:35:53.693"/>
+<status status="PASS" starttime="20241023 23:03:48.070" endtime="20241023 23:03:48.094"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${LOGIN.inpUsername}</arg>
 <arg>${LOGIN.error}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230909 11:35:53.694" level="INFO">Typing text 'error' into text field '//*[@name="user-name"]'.</msg>
-<status status="PASS" starttime="20230909 11:35:53.693" endtime="20230909 11:35:53.777"/>
+<msg timestamp="20241023 23:03:48.095" level="INFO">Typing text 'error' into text field '//*[@name="user-name"]'.</msg>
+<status status="PASS" starttime="20241023 23:03:48.094" endtime="20241023 23:03:48.180"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${LOGIN.inpPassword}</arg>
 <arg>${LOGIN.error}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230909 11:35:53.779" level="INFO">Typing text 'error' into text field '//*[@name="password"]'.</msg>
-<status status="PASS" starttime="20230909 11:35:53.777" endtime="20230909 11:35:53.848"/>
+<msg timestamp="20241023 23:03:48.181" level="INFO">Typing text 'error' into text field '//*[@name="password"]'.</msg>
+<status status="PASS" starttime="20241023 23:03:48.180" endtime="20241023 23:03:48.241"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${LOGIN.btnLoging}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230909 11:35:53.849" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
-<status status="PASS" starttime="20230909 11:35:53.849" endtime="20230909 11:35:53.895"/>
+<msg timestamp="20241023 23:03:48.241" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20241023 23:03:48.241" endtime="20241023 23:03:48.292"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${textValidation}</var>
 <arg>${LOGIN.errorText}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230909 11:35:53.921" level="INFO">${textValidation} = Epic sadface: Username and password do not match any user in this service</msg>
-<status status="PASS" starttime="20230909 11:35:53.895" endtime="20230909 11:35:53.921"/>
+<msg timestamp="20241023 23:03:48.312" level="INFO">${textValidation} = Epic sadface: Username and password do not match any user in this service</msg>
+<status status="PASS" starttime="20241023 23:03:48.292" endtime="20241023 23:03:48.312"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <var>${textValidation}</var>
 <arg>${textValidation}</arg>
 <arg>${LOGIN_VALIDATIONS.loginError}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<msg timestamp="20230909 11:35:53.921" level="INFO">${textValidation} = None</msg>
-<status status="PASS" starttime="20230909 11:35:53.921" endtime="20230909 11:35:53.921"/>
+<msg timestamp="20241023 23:03:48.313" level="INFO">${textValidation} = None</msg>
+<status status="PASS" starttime="20241023 23:03:48.312" endtime="20241023 23:03:48.313"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <arg>${loginScreenShoot}\TC003.jpg</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20230909 11:35:53.984" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="resultsLoginloginScreenShootsTC003.jpg"&gt;&lt;img src="resultsLoginloginScreenShootsTC003.jpg" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20230909 11:35:53.921" endtime="20230909 11:35:53.984"/>
+<msg timestamp="20241023 23:03:48.391" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="resultsLoginloginScreenShootsTC003.jpg"&gt;&lt;img src="resultsLoginloginScreenShootsTC003.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241023 23:03:48.313" endtime="20241023 23:03:48.391"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:53.672" endtime="20230909 11:35:53.984"/>
+<status status="PASS" starttime="20241023 23:03:48.070" endtime="20241023 23:03:48.391"/>
 </kw>
 <kw name="Fechar Browser" library="login-scenarios" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230909 11:35:53.985" endtime="20230909 11:35:56.122"/>
+<status status="PASS" starttime="20241023 23:03:48.392" endtime="20241023 23:03:50.542"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:53.985" endtime="20230909 11:35:56.123"/>
+<status status="PASS" starttime="20241023 23:03:48.392" endtime="20241023 23:03:50.542"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:52.287" endtime="20230909 11:35:56.124"/>
+<status status="PASS" starttime="20241023 23:03:46.517" endtime="20241023 23:03:50.542"/>
 </test>
 <test id="s1-t4" name="TC004 - Validando Login bloqueado" line="19">
 <kw name="Dado que eu acesse o site" library="login-scenarios" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL.sauceDemo}</arg>
 <arg>${browser}</arg>
+<arg>options=add_argument("--headless")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230909 11:35:56.130" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/'.</msg>
-<status status="PASS" starttime="20230909 11:35:56.128" endtime="20230909 11:35:57.673"/>
+<msg timestamp="20241023 23:03:50.546" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/'.</msg>
+<status status="PASS" starttime="20241023 23:03:50.545" endtime="20241023 23:03:52.166"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:56.127" endtime="20230909 11:35:57.673"/>
+<status status="PASS" starttime="20241023 23:03:50.542" endtime="20241023 23:03:52.166"/>
 </kw>
 <kw name="E insira login e senha válidos - block" library="login-scenarios">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${LOGIN.inpUsername}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230909 11:35:57.673" endtime="20230909 11:35:57.705"/>
+<status status="PASS" starttime="20241023 23:03:52.168" endtime="20241023 23:03:52.185"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${LOGIN.inpUsername}</arg>
 <arg>${LOGIN.userLock}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230909 11:35:57.706" level="INFO">Typing text 'locked_out_user' into text field '//*[@name="user-name"]'.</msg>
-<status status="PASS" starttime="20230909 11:35:57.705" endtime="20230909 11:35:57.798"/>
+<msg timestamp="20241023 23:03:52.185" level="INFO">Typing text 'locked_out_user' into text field '//*[@name="user-name"]'.</msg>
+<status status="PASS" starttime="20241023 23:03:52.185" endtime="20241023 23:03:52.288"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${LOGIN.inpPassword}</arg>
 <arg>${LOGIN.password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230909 11:35:57.799" level="INFO">Typing text 'secret_sauce' into text field '//*[@name="password"]'.</msg>
-<status status="PASS" starttime="20230909 11:35:57.798" endtime="20230909 11:35:57.863"/>
+<msg timestamp="20241023 23:03:52.290" level="INFO">Typing text 'secret_sauce' into text field '//*[@name="password"]'.</msg>
+<status status="PASS" starttime="20241023 23:03:52.288" endtime="20241023 23:03:52.354"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${LOGIN.btnLoging}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230909 11:35:57.864" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
-<status status="PASS" starttime="20230909 11:35:57.863" endtime="20230909 11:35:57.904"/>
+<msg timestamp="20241023 23:03:52.354" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20241023 23:03:52.354" endtime="20241023 23:03:52.411"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:57.673" endtime="20230909 11:35:57.904"/>
+<status status="PASS" starttime="20241023 23:03:52.168" endtime="20241023 23:03:52.411"/>
 </kw>
 <kw name="E meu login esteja bloqueado" library="login-scenarios">
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${textValidation}</var>
 <arg>${LOGIN.errorText}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230909 11:35:57.924" level="INFO">${textValidation} = Epic sadface: Sorry, this user has been locked out.</msg>
-<status status="PASS" starttime="20230909 11:35:57.905" endtime="20230909 11:35:57.924"/>
+<msg timestamp="20241023 23:03:52.433" level="INFO">${textValidation} = Epic sadface: Sorry, this user has been locked out.</msg>
+<status status="PASS" starttime="20241023 23:03:52.411" endtime="20241023 23:03:52.433"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <var>${textValidation}</var>
 <arg>${textValidation}</arg>
 <arg>${LOGIN_VALIDATIONS.loginLock}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<msg timestamp="20230909 11:35:57.925" level="INFO">${textValidation} = None</msg>
-<status status="PASS" starttime="20230909 11:35:57.924" endtime="20230909 11:35:57.925"/>
+<msg timestamp="20241023 23:03:52.434" level="INFO">${textValidation} = None</msg>
+<status status="PASS" starttime="20241023 23:03:52.433" endtime="20241023 23:03:52.434"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <arg>${loginScreenShoot}\TC004.jpg</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20230909 11:35:58.015" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="resultsLoginloginScreenShootsTC004.jpg"&gt;&lt;img src="resultsLoginloginScreenShootsTC004.jpg" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20230909 11:35:57.925" endtime="20230909 11:35:58.015"/>
+<msg timestamp="20241023 23:03:52.490" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="resultsLoginloginScreenShootsTC004.jpg"&gt;&lt;img src="resultsLoginloginScreenShootsTC004.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241023 23:03:52.435" endtime="20241023 23:03:52.490"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:57.905" endtime="20230909 11:35:58.015"/>
+<status status="PASS" starttime="20241023 23:03:52.411" endtime="20241023 23:03:52.491"/>
 </kw>
 <kw name="Fechar Browser" library="login-scenarios" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230909 11:35:58.016" endtime="20230909 11:36:00.134"/>
+<status status="PASS" starttime="20241023 23:03:52.491" endtime="20241023 23:03:54.648"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:58.016" endtime="20230909 11:36:00.134"/>
+<status status="PASS" starttime="20241023 23:03:52.491" endtime="20241023 23:03:54.648"/>
 </kw>
-<status status="PASS" starttime="20230909 11:35:56.127" endtime="20230909 11:36:00.135"/>
+<status status="PASS" starttime="20241023 23:03:50.542" endtime="20241023 23:03:54.648"/>
 </test>
 <test id="s1-t5" name="TC005 - Validando o login com sucesso" line="23">
 <kw name="Dado que eu acesse o site" library="login-scenarios" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL.sauceDemo}</arg>
 <arg>${browser}</arg>
+<arg>options=add_argument("--headless")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230909 11:36:00.141" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/'.</msg>
-<status status="PASS" starttime="20230909 11:36:00.139" endtime="20230909 11:36:01.482"/>
+<msg timestamp="20241023 23:03:54.652" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/'.</msg>
+<status status="PASS" starttime="20241023 23:03:54.651" endtime="20241023 23:03:56.552"/>
 </kw>
-<status status="PASS" starttime="20230909 11:36:00.139" endtime="20230909 11:36:01.482"/>
+<status status="PASS" starttime="20241023 23:03:54.651" endtime="20241023 23:03:56.554"/>
 </kw>
 <kw name="E insira login e senha válidos - success" library="login-scenarios">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${LOGIN.inpUsername}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230909 11:36:01.482" endtime="20230909 11:36:01.511"/>
+<status status="PASS" starttime="20241023 23:03:56.554" endtime="20241023 23:03:56.588"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${LOGIN.inpUsername}</arg>
 <arg>${LOGIN.usernameValid}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230909 11:36:01.511" level="INFO">Typing text 'standard_user' into text field '//*[@name="user-name"]'.</msg>
-<status status="PASS" starttime="20230909 11:36:01.511" endtime="20230909 11:36:01.601"/>
+<msg timestamp="20241023 23:03:56.589" level="INFO">Typing text 'standard_user' into text field '//*[@name="user-name"]'.</msg>
+<status status="PASS" starttime="20241023 23:03:56.588" endtime="20241023 23:03:56.780"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${LOGIN.inpPassword}</arg>
 <arg>${LOGIN.password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230909 11:36:01.602" level="INFO">Typing text 'secret_sauce' into text field '//*[@name="password"]'.</msg>
-<status status="PASS" starttime="20230909 11:36:01.601" endtime="20230909 11:36:01.675"/>
+<msg timestamp="20241023 23:03:56.781" level="INFO">Typing text 'secret_sauce' into text field '//*[@name="password"]'.</msg>
+<status status="PASS" starttime="20241023 23:03:56.780" endtime="20241023 23:03:56.845"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${LOGIN.btnLoging}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230909 11:36:01.676" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
-<status status="PASS" starttime="20230909 11:36:01.675" endtime="20230909 11:36:02.181"/>
+<msg timestamp="20241023 23:03:56.845" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20241023 23:03:56.845" endtime="20241023 23:03:58.533"/>
 </kw>
-<status status="PASS" starttime="20230909 11:36:01.482" endtime="20230909 11:36:02.181"/>
+<status status="PASS" starttime="20241023 23:03:56.554" endtime="20241023 23:03:58.533"/>
 </kw>
 <kw name="Então devo entrar na tela de produtos" library="login-scenarios">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${PRODUCTS.labelHeader}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230909 11:36:02.181" endtime="20230909 11:36:02.208"/>
+<status status="PASS" starttime="20241023 23:03:58.535" endtime="20241023 23:03:58.558"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${productsPage}</var>
 <arg>${PRODUCTS.labelHeader}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230909 11:36:02.238" level="INFO">${productsPage} = Products</msg>
-<status status="PASS" starttime="20230909 11:36:02.209" endtime="20230909 11:36:02.238"/>
+<msg timestamp="20241023 23:03:58.576" level="INFO">${productsPage} = Products</msg>
+<status status="PASS" starttime="20241023 23:03:58.558" endtime="20241023 23:03:58.576"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${productsPage}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230909 11:36:02.238" endtime="20230909 11:36:02.238"/>
+<status status="PASS" starttime="20241023 23:03:58.576" endtime="20241023 23:03:58.578"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${productsPage}</arg>
 <arg>Products</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20230909 11:36:02.239" endtime="20230909 11:36:02.239"/>
+<status status="PASS" starttime="20241023 23:03:58.578" endtime="20241023 23:03:58.578"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <arg>${loginScreenShoot}\TC005.jpg</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20230909 11:36:02.354" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="resultsLoginloginScreenShootsTC005.jpg"&gt;&lt;img src="resultsLoginloginScreenShootsTC005.jpg" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20230909 11:36:02.239" endtime="20230909 11:36:02.354"/>
+<msg timestamp="20241023 23:03:58.667" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="resultsLoginloginScreenShootsTC005.jpg"&gt;&lt;img src="resultsLoginloginScreenShootsTC005.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241023 23:03:58.578" endtime="20241023 23:03:58.667"/>
 </kw>
-<status status="PASS" starttime="20230909 11:36:02.181" endtime="20230909 11:36:02.354"/>
+<status status="PASS" starttime="20241023 23:03:58.535" endtime="20241023 23:03:58.667"/>
 </kw>
 <kw name="Fechar Browser" library="login-scenarios" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230909 11:36:02.356" endtime="20230909 11:36:04.575"/>
+<status status="PASS" starttime="20241023 23:03:58.669" endtime="20241023 23:04:00.819"/>
 </kw>
-<status status="PASS" starttime="20230909 11:36:02.356" endtime="20230909 11:36:04.575"/>
+<status status="PASS" starttime="20241023 23:03:58.667" endtime="20241023 23:04:00.819"/>
 </kw>
-<status status="PASS" starttime="20230909 11:36:00.137" endtime="20230909 11:36:04.575"/>
+<status status="PASS" starttime="20241023 23:03:54.650" endtime="20241023 23:04:00.819"/>
 </test>
-<status status="PASS" starttime="20230909 11:35:44.613" endtime="20230909 11:36:04.577"/>
+<status status="PASS" starttime="20241023 23:03:36.087" endtime="20241023 23:04:00.821"/>
 </suite>
 <statistics>
 <total>

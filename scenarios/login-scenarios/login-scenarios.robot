@@ -7,7 +7,7 @@ Library    Screenshot
 
 *** Keywords ***
 Dado que eu acesse o site
-    Open Browser    ${URL.sauceDemo}    ${browser}
+    Open Browser    ${URL.sauceDemo}    ${browser}     options=add_argument("--headless")
 Fechar Browser
     Close Browser
 
