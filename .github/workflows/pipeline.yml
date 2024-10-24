@@ -31,4 +31,4 @@ jobs:
         if: always()
         with:
           name: resultado-testes
-          path: /results
+          path: results
